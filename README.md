@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Before, run the development server:
+ 
+start the websoket server manually 
 
 ```bash
 npm run dev
@@ -16,19 +16,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Structure
+* pages/ - Contains the Next.js pages.
+* components/ - Contains React components, including the one responsible for displaying the received numbers.
+* redux/ - Contains Redux-related files, including Redux Toolkit setup, actions, reducers, and the store configuration.
+* websocket/ - Contains WebSocket implementation and related logic.
 
-## Learn More
+## Styling
+* The application uses Tailwind CSS for styling. You can customize the styles in the tailwind.config.js file and use Tailwind utility classes to style your components. Feel free to modify the styles to match your preferences and design requirements.
 
-To learn more about Next.js, take a look at the following resources:
+## WebSocket Implementation
+* The WebSocket communication is implemented in the redux/features/websocketMiddelware/ directory. The client establishes a WebSocket connection to the server, which received random numbers every 100ms. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Redux Integration
+* Redux is integrated into the project using Redux Toolkit. The Redux store is configured in the redux/store.js file, and actions and reducers are defined in the appropriate files within the redux/ directory. The WebSocket data is stored in the Redux state for easy access and display.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Conditional Text Color
+The text color of the displayed number changes based on the following conditions:
+* When the new value is greater than the previous one, it changes to green.
+* When the new value is lower than the previous one, it changes to red.
+* If the new value is the same as the previous one, it changes to white.
 
-## Deploy on Vercel
+These conditions are implemented in the client-side component
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
