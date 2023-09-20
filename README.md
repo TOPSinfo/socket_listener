@@ -2,7 +2,7 @@
 
 Before, run the development server:
  
-start the websoket server manually 
+start the websoket server manually, it should run on port 3001 (Default) , socket end point can be changed from /config/config.ts directory
 
 ```bash
 npm run dev

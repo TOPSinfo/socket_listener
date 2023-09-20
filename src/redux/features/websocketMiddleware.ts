@@ -1,9 +1,10 @@
 // websocketMiddleware.ts
 import { Dispatch } from 'redux';
 import { setSocket, setRandomNumber } from './websocketSlice';
+import config from '@/config/config';
 
 export const createWebSocket = () => (dispatch: Dispatch, getState: () => any) => {
-  const socket = new WebSocket('ws://localhost:3001');
+  const socket = new WebSocket(config?.socketUrl);
 
   socket.onopen = () => {
     console.log('WebSocket connection opened');
