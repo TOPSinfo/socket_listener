@@ -1,0 +1,12 @@
+{
+  "extends":[ 
+    "next/core-web-vitals",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ],
+  "rules": {
+    // Add basic rules here
+    "no-console": "warn", // This warns against using console.log, etc.
+    "no-unused-vars": "warn" // This warns about unused variables
+  }
+}
